@@ -936,13 +936,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -954,10 +960,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LimitInterceptor, [{
         key: "intercept",
         value: function intercept(req, next) {
-          var cloned = req.clone({// params: new HttpParams().set('_limit', '15')
+          var cloned = req.clone({
+            params: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpParams"]().set('_limit', '20')
           });
-          return next.handle(cloned).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (error) {
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["throwError"])(function () {
+          return next.handle(cloned).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(function () {
               return error;
             });
           }));
@@ -992,27 +999,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
     var NotesService = /*#__PURE__*/function () {
       function NotesService(http) {
@@ -1024,10 +1031,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(NotesService, [{
         key: "getNotes",
         value: function getNotes() {
-          return this.http.get('https://jsonplaceholder.typicode.com/posts', {
-            params: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpParams"]().set('_limit', '10')
-          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (error) {
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])(function () {
+          return this.http.get('https://jsonplaceholder.typicode.com/posts').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(function () {
               return error;
             });
           }));
@@ -1048,10 +1053,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     NotesService.ɵfac = function NotesService_Factory(t) {
-      return new (t || NotesService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]));
+      return new (t || NotesService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]));
     };
 
-    NotesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+    NotesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: NotesService,
       factory: NotesService.ɵfac,
       providedIn: 'root'
@@ -1059,14 +1064,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](NotesService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotesService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
           providedIn: 'root'
         }]
       }], function () {
         return [{
-          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
         }];
       }, null);
     })();

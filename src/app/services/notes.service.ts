@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -18,9 +18,7 @@ export class NotesService {
   constructor(private http: HttpClient) {}
 
   getNotes(): Observable<Note[]> {
-    return this.http.get<Note[]>('https://jsonplaceholder.typicode.com/posts', {
-        params: new HttpParams().set('_limit', '10'),
-      })
+    return this.http.get<Note[]>('https://jsonplaceholder.typicode.com/posts')
       .pipe(catchError((error) => throwError(() => error)));
   }
 
