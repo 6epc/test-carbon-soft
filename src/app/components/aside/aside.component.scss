@@ -1,0 +1,38 @@
+:host {
+  background-color: #ff8000;
+  padding: 20px;
+  color: white;
+  overflow-y: auto;
+
+  a {
+    color: #fff;
+  }
+}
+
+.notesList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 20px;
+  line-height: 1.3;
+
+  > li {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &.active a {
+      color: #007bff;
+    }
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      p:first-letter {
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+  }
+}

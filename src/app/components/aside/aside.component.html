@@ -1,0 +1,7 @@
+<ol class="notesList">
+  <li *ngFor="let note of notes; let i = index" [routerLinkActive]="'active'">
+    <a [routerLink]="['/notes', note.id]">
+      <p>{{note.title}}</p>
+    </a>
+  </li>
+</ol>
