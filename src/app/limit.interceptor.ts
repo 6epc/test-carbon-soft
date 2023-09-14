@@ -15,7 +15,7 @@ export class LimitInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     const cloned = req.clone({
-      // params: new HttpParams().set('_limit', '15')
+      params: new HttpParams().set('_limit', '20')
     });
 
     return next.handle(cloned).pipe(
