@@ -1,7 +1,7 @@
-import {  Component, OnDestroy, OnInit } from '@angular/core';
-import { Note, NotesService } from './services/notes.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Note, NotesService } from './services/notes.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +11,6 @@ export class AppComponent implements OnInit, OnDestroy {
   notes: Note[];
   noteTitle: string;
   noteText: string;
-
   private readonly unsubscribe$: Subject<void> = new Subject();
 
   constructor(private notesService: NotesService) {}
@@ -25,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
   addNote() {
     this.notesService.addNote({ title: this.noteTitle, body: this.noteText })
       .subscribe((note: Note) => {
+        this.notes = [...this.notes];
         this.notes.unshift(note);
 
         this.noteTitle = '';
